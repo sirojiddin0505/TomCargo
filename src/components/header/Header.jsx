@@ -4,15 +4,33 @@ import { IoMenu } from "react-icons/io5";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from 'react';
 import logo from '../../../public/logo.png'; 
-import Link from 'next/link';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <section className='fixed left-0 right-0 bg-white md:bg-[#172246]'>
+    <>
+    <div className='bg-[#ffff]'>
+      <div className='container mx-auto flex justify-center gap-20 py-2'>
+        <span>
+          <a href="#">speedyhiring.info@gmail.com</a>
+        </span>
+        <span>
+          <p>Mon-Sat: 08:00 - 17:00</p>
+        </span>
+        <span>
+          <p>+16155383883</p>
+        </span>
+      </div>
+    </div>
+    <div className='bg-[#3db7ef]'>
+      <div className='container mx-auto py-3'>
+        <Image src={logo} alt='logo bor' className='w-[110px] h-[110px] text-center mx-auto'/>
+      </div>
+    </div>
+    <section className='fixed left-0 right-0  bg-white md:bg-[#172246]'>
       <div className='container mx-auto py-4'>
       <nav className='hidden md:flex justify-center gap-8 py-1.5'>
-        <Link href='/' className={`${"/" === path ? "active" : "" }`}></Link>
+        {/* <Link href='/' className={`${"/" === path ? "active" : "" }`}></Link> */}
         <a href="/" className='text-[#ffff] font-[500]'>Home</a>
         <p className='text-[#ffff] opacity-40'>|</p>
         <a href="/about" className='text-[#ffff] font-[500]'>About Us</a>
@@ -21,7 +39,7 @@ const Header = () => {
         <p className='text-[#ffff] opacity-40'>|</p>
         <a href="#" className='text-[#ffff] font-[500]'>Why Us</a>
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="#" className='text-[#ffff] font-[500]'>News</a> 
+        <a href="/news" className='text-[#ffff] font-[500]'>News</a> 
         <p className='text-[#ffff] opacity-40'>|</p>
         <a href="#" className='text-[#ffff] font-[500]'>Contacts</a>
       </nav>
@@ -47,6 +65,7 @@ const Header = () => {
         </div>
       )}
     </section>
+    </>
   )
 }
 
