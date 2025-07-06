@@ -22,37 +22,37 @@ export const newsData = [
         }
     ]
 
-    export const servicesData = [
-        {
-            id:1,
-            image: "",
-            description:"Transportation"
-        },
-        {
-            id:2,
-            image: "",
-            description:"Logistics"
-        },
-        {
-            id:3,
-            image: "",
-            description:"Towing service"
-        },
-        {
-            id:4,
-            image: "",
-            description:"Maintenance Leasing"
-        },
-        {
-            id:5,
-            image: "",
-            description:"Distribution Services"
-        },
-        {
-            id:6,
-            image: "",
-            description:"Storage"
-        }
-    ]
+    // export const servicesData = [
+    //     {
+    //         id:1,
+    //         image: "/services1.png",
+    //         description:"Transportation"
+    //     },
+    //     {
+    //         id:2,
+    //         image: "",
+    //         description:"Logistics"
+    //     },
+    //     {
+    //         id:3,
+    //         image: "",
+    //         description:"Towing service"
+    //     },
+    //     {
+    //         id:4,
+    //         image: "",
+    //         description:"Maintenance Leasing"
+    //     },
+    //     {
+    //         id:5,
+    //         image: "",
+    //         description:"Distribution Services"
+    //     },
+    //     {
+    //         id:6,
+    //         image: "",
+    //         description:"Storage"
+    //     }
+    // ]
 
 
