@@ -3,7 +3,7 @@ import React from 'react'
 
 const Card = ({img, title, date, description}) => {
   return (
-  <div className="rounded-lg shadow-md w-[320px] xl:w-[450px] bg-white">
+  <div className="rounded-lg shadow-md w-[320px] xl:w-[420px] bg-white">
     <div className='overflow-hidden rounded-lg hover:bg-[black/70]'>
         <Image src={img} alt={title} className="w-full h-40 lg:h-60 object-cover transition-transform duration-300 ease-in-out hover:scale-110 "/>
     </div> 

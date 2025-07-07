@@ -31,17 +31,17 @@ const Header = () => {
       <div className='container mx-auto py-4'>
       <nav className='hidden md:flex justify-center gap-8 py-1.5'>
         {/* <Link href='/' className={`${"/" === path ? "active" : "" }`}></Link> */}
-        <a href="/" className='text-[#ffff] font-[500]'>Home</a>
+        <a href="#home" className='text-[#ffff] font-[500] hover:underline'>Home</a>
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="/about" className='text-[#ffff] font-[500]'>About Us</a>
+        <a href="#about" className='text-[#ffff] font-[500]'>About Us</a>
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="#" className='text-[#ffff] font-[500]'>Our Services</a>
+        <a href="#services" className='text-[#ffff] font-[500]'>Our Services</a>
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="#" className='text-[#ffff] font-[500]'>Why Us</a>
+        <a href="#why" className='text-[#ffff] font-[500]'>Why Us</a>
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="/news" className='text-[#ffff] font-[500]'>News</a> 
+        <a href="#news" className='text-[#ffff] font-[500]'>News</a> 
         <p className='text-[#ffff] opacity-40'>|</p>
-        <a href="#" className='text-[#ffff] font-[500]'>Contacts</a>
+        <a href="#contact" className='text-[#ffff] font-[500]'>Contacts</a>
       </nav>
       <div className='flex items-center justify-between px-1'>
         <div className='text-gray-800 font-bold text-3xl md:hidden cursor-pointer' onClick={() => setShowModal(!showModal) }>{showModal  ? <FaArrowLeftLong /> : <IoMenu/>} </div>
