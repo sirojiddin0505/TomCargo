@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
-import { FaRightLong } from 'react-icons/fa6'
+import { FaClosedCaptioning, FaRightLong } from 'react-icons/fa6'
+import { IoClose } from "react-icons/io5";
 import Card from '@/components/card/Card'
 import { newsData } from '@/components/data/data'
 import logo from '../../public/logo.png'
@@ -16,19 +18,17 @@ import partrners2 from '../../public/ups.png'
 import partrners3 from '../../public/axle.png'
 import partrners4 from '../../public/fedex.png'
 import about1 from '../../public/about.png'
+import HeroSlider from '@/components/slider/HeroSlider'
+import { useState } from 'react'
 
 
 const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
-    <section>
-      <main id="home" className="min-h-[700px] bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4 opacity-80" style={{backgroundImage: "url('/services4.jpg')" }} >
-        <h1 className="text-5xl md:text-6xl font-bold my-6">Unlimited Delivery</h1>
-        <p className="text-xl md:text-2xl max-w-2xl">
-          We help people save time, make their life better, exercising communications, both in business and private life.
-        </p>
-      </main>
+    <section id='home'>
+      <HeroSlider />
 
-      <main id='about' className='container mx-auto py-12 px-4'>
+      <main id='about' className='container mx-auto py-12 px-4 '>
         <h2 className='text-3xl font-bold text-center py-4'>COMPANY AT A GLANCE</h2>
         <hr className='bg-[#3db7ef] border-none w-20 h-[3px] my-3 mb-5 mx-auto'/>
         <div className='flex flex-col items-center gap-6 justify-center md:grid md:grid-cols-2 pt-4'>
@@ -38,7 +38,7 @@ const HomePage = () => {
           <div className='text-center md:text-start'>
             <p className='max-w-[670px] py-2'>Our transportation company with 30 years of experience is you best choice for shipping cargo of any size, storage, packing or delivering wares to your customers. Our professional employees will take care of your goods, whenever you send them</p>
             <p className='max-w-[670px] py-2'>You are granted complete control over the process of delivery by phone or by our mobile app. Your freight is tracked every step of the   way. We provide a high standard of shipping, regardless of its volume. If your company needs to establish a supply chain, we have prepared several readymade solutions with flexible pricing rates for you. Our urgent cargo services offer defined time frames for convenience of your business. Our supply chain services include shipping, warehousing, packaging, quality control and distribution.</p>
-            <button>Contact Us</button>
+            <button onClick={() => setShowModal(true)} className='py-3 px-8 border mt-4 rounded-md text-[#ffff] font-bold cursor-pointer bg-[#3db7ef] hover:opacity-80 active:scale-90 duration-420'>Contact Us</button>
           </div>
         </div>
       </main>
@@ -183,6 +183,33 @@ const HomePage = () => {
          </div>
         </div>
       </main>
+
+      {showModal && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'>
+          <div className='w-[500px] h-[480px] bg-white/100 p-6 rounded-xl relative'>
+            <form className='w-full'>
+              <div className='flex justify-between items-center px-4'>
+                <h3 className='text-gray-800 text-lg mb-2 font-[600]'>Select your role:</h3>
+                <p className='text-gray-800 cursor-pointer font-[800] text-2xl' onClick={()=> setShowModal(false)}><IoClose/></p>
+              </div>
+              <div className='flex gap-4 mb-4'>
+                <label className='flex items-center text-gray-800 gap-1 cursor-pointer'>
+                  <input type="radio" name="role"/>Owner
+                </label>
+                <label className='flex items-center text-gray-800 gap-1 cursor-pointer '>
+                  <input type="radio" name="role" />Company
+                </label>
+              </div>
+              <input type="text" placeholder='Your name' className='block border p-2 rounded-md w-full bg-white text-gray-700 outline-none mb-2' />
+              <input type="text" placeholder='Your last name' className='block border p-2 rounded-md w-full bg-white text-gray-700 outline-none mb-2' />
+              <input type="tel" placeholder='Your number' className='block border p-2 rounded-md w-full bg-white text-gray-700 outline-none mb-2' />
+              <input type="email" placeholder='Your email' className='block border p-2 rounded-md w-full bg-white text-gray-700 outline-none mb-2' />
+              <textarea rows={3} placeholder="Your message..." className='block border p-2 rounded-md w-full bg-white text-gray-700 outline-none mb-4'></textarea>
+              <button type='submit' className='w-full border-none cursor-pointer p-3 rounded-md bg-[#3db7ef] font-semibold text-white hover:bg-[#00a7ef] active:scale-95 duration-300'>Send message</button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

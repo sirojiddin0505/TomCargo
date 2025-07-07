@@ -4,8 +4,8 @@ import React from 'react'
 const Card = ({img, title, date, description}) => {
   return (
   <div className="rounded-lg shadow-md w-[320px] xl:w-[420px] bg-white">
-    <div className='overflow-hidden rounded-lg hover:bg-[black/70]'>
-        <Image src={img} alt={title} className="w-full h-40 lg:h-60 object-cover transition-transform duration-300 ease-in-out hover:scale-110 "/>
+    <div className='overflow-hidden rounded-t-lg hover:bg-[black/70]'>
+        <Image src={img} alt={title} width={400} height={200} className="w-full h-40 lg:h-60 object-cover transition-transform duration-300 ease-in-out hover:scale-110 "/>
     </div> 
     <div className='p-4'>
       <h3 className="mt-4 text-xl font-semibold text-[#3db7ef]">{title}</h3>
